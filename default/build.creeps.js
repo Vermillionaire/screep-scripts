@@ -6,7 +6,7 @@ var buildCreeps = {
       'harvester');
 
     //console.log(Memory.sources[room.name][0].slots.length);
-    if (harvesters.length < (Memory.sources[room.name][0].slots.length + 1)) {
+    if (harvesters.length < (Memory.sources[room.name][1].slots.length)) {
       var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
         undefined, {
           role: 'harvester'
@@ -17,7 +17,7 @@ var buildCreeps = {
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role ==
       'upgrader');
 
-    if (upgraders.length < 2) {
+    if (upgraders.length < 3) {
       var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
         undefined, {
           role: 'upgrader'
@@ -27,24 +27,14 @@ var buildCreeps = {
     var builder = _.filter(Game.creeps, (creep) => creep.memory.role ==
       'builder');
 
-    if (builder.length < 3) {
-      var number = 0 + 1 + 2;
-      for (var i = 0; i < builder.length; i++) {
-        //console.log(builder[i].memory.num)
-        if (builder[i].memory.num == 1)
-          number -= 1;
-        if (builder[i].memory.num == 2)
-          number -= 2;
+    if (builder.length < 2) {
 
-      }
 
-      if (builder.length == 0)
-        number = 2;
-
-      var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE],
+      var newName = Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE,
+          WORK, CARRY, MOVE
+        ],
         undefined, {
-          role: 'builder',
-          num: number
+          role: 'builder'
         });
     }
 

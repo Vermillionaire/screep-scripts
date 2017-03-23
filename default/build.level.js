@@ -29,7 +29,7 @@ var buildLevel = {
   setExtensions: function(room, limit, level) {
     var num_containers = room.find(STRUCTURE_EXTENSION).length;
     var offsetX = limit / 5 - 1;
-    var offsetY = -1;
+    var offsetY = -2;
     var pos = Game.spawns['Spawn1'].pos;
     while (num_containers < limit) {
       //console.log("X: " + (pos.x + offsetX) + " Y: " + (pos.y + offsetY));

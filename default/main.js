@@ -87,7 +87,7 @@ module.exports.loop = function() {
 		var task = Memory.scheduler[item];
 		if (Game.time - task.lastTime > task.period) {
 			task.lastTime = Game.time;
-			console.log("Executing scheduled task");
+			//console.log("Executing scheduled task");
 			switch (item) {
 				case "cleanup":
 					console.log("Cleaning");
@@ -139,4 +139,5 @@ module.exports.loop = function() {
 		//console.log("CPU used: " +
 		//Game.cpu.getUsed());
 	}
+	console.log();
 }

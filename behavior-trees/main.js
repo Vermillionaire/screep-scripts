@@ -29,8 +29,8 @@ var buildTrees = function() {
 
   try_spawn_target.load(behaviors.try_spawn_target, {
     'spawnTargetRole': primatives.createNode('spawnTargetRole',
-      primatives.moveTo),
-    'canBuildTarget': primatives.createNode('canBuildTarget', primatives.moveTo),
+      primatives.spawnTargetRole),
+    'canBuildTarget': primatives.createNode('canBuildTarget', primatives.canBuildTarget),
     'creepTTLcheck': primatives.createNode('creepTTLcheck', primatives.moveTo),
     'targetAllSpawned': primatives.createNode('targetAllSpawned',
       primatives.moveTo),
@@ -93,6 +93,8 @@ module.exports.loop = function() {
       console.log("not running");
     }
   }
+
+  console.log(Game.cpu.getUsed());
 
 
 
